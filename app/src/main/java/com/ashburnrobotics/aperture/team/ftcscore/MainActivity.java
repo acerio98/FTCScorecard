@@ -22,6 +22,7 @@ private Score myScore;
         addScore.setOnClickListener(this);
         myScore = new Score();
         int c = 4;
+        int x = 4;
     }
 
     @Override
