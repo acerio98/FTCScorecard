@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Autonomous Period"
+        android:id="@+id/title"
+        android:textSize="30sp"
+        android:enabled="true"
+        android:layout_gravity="center_horizontal" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Drove from Platform onto Field"
+        android:id="@+id/check1"
+        android:layout_gravity="center_horizontal|start"
+        android:layout_marginStart="60dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Released Kickstand"
+        android:id="@+id/check2"
+        android:layout_gravity="center_horizontal|start"
+        android:layout_marginStart="60dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of Autonomous Balls in Rolling Goals"
+        android:id="@+id/prompt1"
+        android:layout_gravity="center_horizontal|start"
+        android:layout_marginStart="60dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/edit1"
+        android:layout_gravity="start"
+        android:layout_marginStart="60dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Autonomous Ball in Center Goal"
+        android:id="@+id/check3"
+        android:layout_gravity="center_horizontal|start"
+        android:layout_marginStart="60dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of Rolling Goals in Parking Zone"
+        android:id="@+id/prompt2"
+        android:layout_gravity="center_horizontal|start"
+        android:layout_marginStart="60dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/edit2"
+        android:layout_gravity="start"
+        android:layout_marginStart="60dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:id="@+id/cancelButton"
+            android:layout_gravity="start" />
+
+        <Space
+            android:layout_width="200dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:id="@+id/nextButton"
+            android:layout_gravity="end" />
+    </LinearLayout>
+
+</LinearLayout>
