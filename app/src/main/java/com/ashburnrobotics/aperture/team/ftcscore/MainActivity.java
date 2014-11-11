@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 
-public class MainActivity extends Activity implements View.OnClickListener{
+public class MainActivity extends Activity implements View.OnClickListener, {
 Button addScore;
 private Score myScore;
 

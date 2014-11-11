@@ -52,7 +52,7 @@ public class AutonomousActivity extends Activity implements View.OnClickListener
                 savedToast.show();
             }
             else{
-                
+             int x = 5;
             }
         }
     }
