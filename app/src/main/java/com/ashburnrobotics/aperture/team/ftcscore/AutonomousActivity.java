@@ -46,13 +46,13 @@ public class AutonomousActivity extends Activity implements View.OnClickListener
             startActivity(new Intent(this, MainActivity.class));
         }
         else if(view.getId()==R.id.nextButton){
-            if(edit1.getText().equals("")||edit2.getText().equals("")){
+            if((edit1.getText()+"").equals("")||(edit2.getText()+"").equals("")){
                 Toast savedToast = Toast.makeText(getApplicationContext(), "Please fill in all fields.",
                         Toast.LENGTH_SHORT);
                 savedToast.show();
             }
             else{
-             int x = 5;
+
             }
         }
     }
