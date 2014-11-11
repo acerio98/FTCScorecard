@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FTCScore.iml" filepath="$PROJECT_DIR$/FTCScore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FTCScorecard.iml" filepath="$PROJECT_DIR$/FTCScorecard.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

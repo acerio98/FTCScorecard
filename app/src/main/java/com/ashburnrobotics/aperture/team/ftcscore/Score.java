@@ -44,6 +44,22 @@ public class Score {
     }
     public int calculateScore(){
         //For Michael to do.
-        return 0;
+        int total = 0;
+        int cm30= numBallsIn30cm;
+        int cm60= numBallsIn30cm*2;
+        int cm90= numBallsIn30cm*3;
+        total+=cm30+cm60+cm90;
+        if(platToField)
+            total+=20;
+        if(kickstand)
+            total+=30;
+        if(autoBallCenGoal)
+            total+=60;
+        total+=numAutoBallsInRollGoal*30;
+        total+=numRollGoalsInParkZoneAuto*20;
+        total+=numRobotsOrRollGoalsInParkZoneEnd*10;
+        total+=numRobotsOrRollGoalsOffFloor*30;
+        total+=numBallsInCenGoal*6;
+        return total;
     }
 }
