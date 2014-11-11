@@ -1,12 +1,17 @@
 package com.ashburnrobotics.aperture.team.ftcscore;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 /**
@@ -17,7 +22,7 @@ import android.view.ViewGroup;
  * Use the {@link AutonomousFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AutonomousFragment extends Fragment {
+public class AutonomousFragment extends Fragment implements Button.OnClickListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -28,6 +33,10 @@ public class AutonomousFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    private Button cancelButton, nextButton;
+    private CheckBox check1, check2, check3;
+    private EditText edit1, edit2;
 
     /**
      * Use this factory method to create a new instance of
@@ -58,12 +67,29 @@ public class AutonomousFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+        View view = null;
+        view = inflater.inflate(R.layout.fragment_autonomous, container, false);
+
+        cancelButton = (Button)view.findViewById(R.id.cancelButton);
+        cancelButton.setOnClickListener(this);
+        nextButton = (Button)view.findViewById(R.id.nextButton);
+        nextButton.setOnClickListener(this);
+
+        check1 = (CheckBox)view.findViewById(R.id.check1);
+        check2 = (CheckBox)view.findViewById(R.id.check2);
+        check3 = (CheckBox)view.findViewById(R.id.check3);
+
+        edit1 = (EditText)view.findViewById(R.id.edit1);
+        edit2 = (EditText)view.findViewById(R.id.edit2);
+
         return inflater.inflate(R.layout.fragment_autonomous, container, false);
     }
 
@@ -71,6 +97,22 @@ public class AutonomousFragment extends Fragment {
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
+        }
+    }
+
+    public void onClick(View v){
+        if(v.getId()==R.id.cancelButton){
+            startActivity(new Intent(this, MainActivity.class));
+        }
+        else if(v.getId()==R.id.nextButton){
+            if((edit1.getText()+"").equals("")||(edit2.getText()+"").equals("")){
+                Toast savedToast = Toast.makeText(getApplicationContext(), "Please fill in all fields.",
+                        Toast.LENGTH_SHORT);
+                savedToast.show();
+            }
+            else{
+
+            }
         }
     }
 
