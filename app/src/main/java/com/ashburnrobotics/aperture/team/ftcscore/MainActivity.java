@@ -14,18 +14,16 @@ import android.widget.TextView;
 
 
 public class MainActivity extends Activity implements View.OnClickListener{
-Button addScore;
-private Score myScore;
+ImageButton addScore;
 private TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addScore = (Button)findViewById(R.id.addButton);
+        addScore = (ImageButton)findViewById(R.id.addButton);
         text = (TextView)findViewById(R.id.textView);
         addScore.setOnClickListener(this);
-        myScore = new Score();
 
         if(savedInstanceState == null){
             getFragmentManager().beginTransaction()
@@ -42,7 +40,7 @@ private TextView text;
 
             i.putExtra("score", score);//find a way to put a score into this method.
             startActivity(new Intent(this, AutonomousActivity.class));
-            
+
             text.setText(score.toString());
         }
     }
