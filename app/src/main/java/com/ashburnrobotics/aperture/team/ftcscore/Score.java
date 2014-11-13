@@ -1,9 +1,12 @@
 package com.ashburnrobotics.aperture.team.ftcscore;
 
+import java.io.Serializable;
+
 /**
  * Created by Austin on 11/9/14.
  */
-public class Score {
+public class Score implements Serializable{
+    private static final long serialVersionUID = 1L;
     //Autonomous
     private boolean platToField, kickstand, autoBallCenGoal;
     private int numAutoBallsInRollGoal, numRollGoalsInParkZoneAuto;
@@ -61,5 +64,8 @@ public class Score {
         total+=numRobotsOrRollGoalsOffFloor*30;
         total+=numBallsInCenGoal*6;
         return total;
+    }
+    public String toString(){
+        return calculateScore()+"";
     }
 }

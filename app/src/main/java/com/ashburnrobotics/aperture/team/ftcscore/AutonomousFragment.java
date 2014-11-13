@@ -101,19 +101,8 @@ public class AutonomousFragment extends Fragment implements Button.OnClickListen
     }
 
     public void onClick(View v){
-        if(v.getId()==R.id.cancelButton){
-            startActivity(new Intent(this, MainActivity.class));
-        }
-        else if(v.getId()==R.id.nextButton){
-            if((edit1.getText()+"").equals("")||(edit2.getText()+"").equals("")){
-                Toast savedToast = Toast.makeText(getApplicationContext(), "Please fill in all fields.",
-                        Toast.LENGTH_SHORT);
-                savedToast.show();
-            }
-            else{
 
-            }
-        }
+        mListener.onFragmentInteraction(null);
     }
 
     @Override
@@ -146,6 +135,25 @@ public class AutonomousFragment extends Fragment implements Button.OnClickListen
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
+
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

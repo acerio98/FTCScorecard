@@ -2,33 +2,48 @@ package com.ashburnrobotics.aperture.team.ftcscore;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 
-public class MainActivity extends Activity implements View.OnClickListener, {
+public class MainActivity extends Activity implements View.OnClickListener{
 Button addScore;
 private Score myScore;
+private TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addScore = (Button)findViewById(R.id.addButton);
+        text = (TextView)findViewById(R.id.textView);
         addScore.setOnClickListener(this);
         myScore = new Score();
-        int c = 4;
-        int x = 4;
+
+        if(savedInstanceState == null){
+            getFragmentManager().beginTransaction()
+                    .add(R.id.mainLayout, new AutonomousFragment())
+                    .commit();
+        }
     }
 
     @Override
     public void onClick(View view){
         if(view.getId()==R.id.addButton){
+            Intent i = new Intent(MainActivity.this, AutonomousActivity.class);
+            Score score = new Score();
+
+            i.putExtra("score", score);//find a way to put a score into this method.
             startActivity(new Intent(this, AutonomousActivity.class));
+            
+            text.setText(score.toString());
         }
     }
 

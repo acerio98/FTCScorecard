@@ -43,7 +43,7 @@ public class AutonomousActivity extends Activity implements View.OnClickListener
     @Override
     public void onClick(View view){
         if(view.getId()==R.id.cancelButton){
-            startActivity(new Intent(this, MainActivity.class));
+            finish();
         }
         else if(view.getId()==R.id.nextButton){
             if((edit1.getText()+"").equals("")||(edit2.getText()+"").equals("")){
@@ -52,6 +52,19 @@ public class AutonomousActivity extends Activity implements View.OnClickListener
                 savedToast.show();
             }
             else{
+                boolean platToField                 = check1.isChecked();
+                boolean kickstand                   = check2.isChecked();
+                boolean autoBallCenGoal             = check3.isChecked();
+                int numAutoBallsInRollGoal          = Integer.parseInt(edit1.getText() + "");
+                int numRollGoalsInParkZoneAuto      = Integer.parseInt(edit2.getText()+"");
+                Score score = (Score)getIntent().getSerializableExtra("score");
+                score.setAutonomousScore(platToField, kickstand, autoBallCenGoal,
+                                         numAutoBallsInRollGoal, numRollGoalsInParkZoneAuto);
+                Intent i = new Intent(AutonomousActivity.this, TeleOpActivity.class);
+
+                i.putExtra("score", score);//find a way to put a score into this method.
+                startActivity(new Intent(this, TeleOpActivity.class));
+
 
             }
         }

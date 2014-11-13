@@ -8,7 +8,8 @@
     android:layout_centerHorizontal="true"
     android:layout_marginTop="31dp"
     tools:context=".MainActivity"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:id="@+id/mainLayout">
 
     <LinearLayout
         android:orientation="horizontal"
