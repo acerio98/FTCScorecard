@@ -8,21 +8,26 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-
+import com.parse.Parse;
+import com.parse.ParseObject;
 
 public class MainActivity extends Activity implements View.OnClickListener{
-Button addScore;
+ImageButton addScore;
 private Score myScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Parse.initialize(this, "TvzrdoaTGxZR0UUkn2WWRhrSMWBFBk8e8I7Lbjp0", "GAgZ0yTuln3vH1HcYaPB3u8KVW84POMmEC0EGZwe");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addScore = (Button)findViewById(R.id.addButton);
+        addScore = (ImageButton)findViewById(R.id.addButton);
         addScore.setOnClickListener(this);
         myScore = new Score();
         int c = 4;
         int x = 4;
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar"); // -- Sends Parse object to cloud
+        testObject.saveInBackground();
     }
 
     @Override

@@ -17,8 +17,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
 
-dependencies {
+
+}
+ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
+dependencies {
+    compile 'com.parse.bolts:bolts-android:1.1.2'
+    compile fileTree(dir: 'libs', include: 'Parse-*.jar')
+}
+
