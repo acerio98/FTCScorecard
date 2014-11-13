@@ -4,5 +4,14 @@
     <string name="app_name">FTC Score</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="autoNext">Next</string>
+    <string name="autoCancel">Cancel</string>
+    <string name="autoNumRollGoalsInPZone">Number of Rolling Goals in Parking Zone</string>
+    <string name="autoBallInCenGoal">Autonomous Ball in Center Goal</string>
+    <string name="autoNumAutoBallsInRollGoal">Number of Autonomous Balls in Rolling Goals</string>
+    <string name="autoKickstand">Released Kickstand</string>
+    <string name="autoPlatToField">Drove from Platform onto Field</string>
+    <string name="autonomous">Autonomous Period</string>
 
 </resources>
