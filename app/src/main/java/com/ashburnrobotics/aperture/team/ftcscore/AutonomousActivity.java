@@ -25,7 +25,7 @@ public class AutonomousActivity extends Activity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.autonomous);
 
         cancelButton = (Button)findViewById(R.id.cancelButton);
         cancelButton.setOnClickListener(this);
@@ -63,8 +63,9 @@ public class AutonomousActivity extends Activity implements View.OnClickListener
                 Intent i = new Intent(AutonomousActivity.this, TeleOpActivity.class);
 
                 i.putExtra("score", score);//find a way to put a score into this method.
-                startActivity(new Intent(this, TeleOpActivity.class));
+                startActivity(i);
 
+                super.finish();
 
             }
         }

@@ -25,11 +25,6 @@ private TextView text;
         text = (TextView)findViewById(R.id.textView);
         addScore.setOnClickListener(this);
 
-        if(savedInstanceState == null){
-            getFragmentManager().beginTransaction()
-                    .add(R.id.mainLayout, new AutonomousFragment())
-                    .commit();
-        }
     }
 
     @Override
@@ -39,7 +34,7 @@ private TextView text;
             Score score = new Score();
 
             i.putExtra("score", score);//find a way to put a score into this method.
-            startActivity(new Intent(this, AutonomousActivity.class));
+            startActivity(i);
 
             text.setText(score.toString());
         }
